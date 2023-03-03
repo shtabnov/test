@@ -1,0 +1,28 @@
+.brigada {
+    margin: 10px !important;
+    width: calc(25% - 20px);
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: #000000d9;
+    font-weight: 500;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
+.connection {
+    color: green;
+}
+.connection_without {
+    color: red;
+}
