@@ -10,6 +10,9 @@ function App() {
     const [departments, setDepartment] = useState([]);
     const [connection, setConnection] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
+    const [selectedDepartment, setSelectedDepartment] = useState(undefined);
+    const [selectedConnection, setSelectedConnection] = useState(undefined);
 
     useEffect(() => {
         axios
@@ -25,21 +28,39 @@ function App() {
                     setConnection(connectiosRes.data);
                 })
             )
-            .catch((error) => console.log(error))
+            .catch((error) => setError(error.message))
             .finally(setIsLoading(false));
     }, []);
+
+    function handleConnectionChange(data) {
+        setSelectedConnection(data);
+    }
+    function handleDepartmentChange(data) {
+        setSelectedDepartment(data);
+    }
 
     if (isLoading) {
         return <h1>Data Loading ...</h1>;
     }
 
+    if (error) {
+        return <h1>{error}</h1>;
+    }
+
     return (
         <div className="App">
-            <Filter departments={departments} connection={connection} />
+            <Filter
+                departments={departments}
+                connection={connection}
+                handleConnectionChange={handleConnectionChange}
+                handleDepartmentChange={handleDepartmentChange}
+            />
             <BrigadesList
                 brigades={brigades}
                 departments={departments}
                 connection={connection}
+                selectedDepartment={selectedDepartment}
+                selectedConnection={selectedConnection}
             />
         </div>
     );

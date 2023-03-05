@@ -2,8 +2,8 @@ import React from "react";
 import { Card } from "antd";
 import styles from "./BrigadesCard.module.css";
 
-const BrigadesCard = ({ brigada, department, connection }) => {
-    const { brigade_name, position } = brigada;
+const BrigadesCard = ({ brigade, department, connection }) => {
+    const { brigade_name, position } = brigade;
 
     return (
         <div className={styles.brigada}>
