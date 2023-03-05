@@ -1,5 +1,6 @@
 .filter {
     display: flex;
+    text-align: left;
 }
 
 .selectbox {

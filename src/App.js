@@ -1,9 +1,9 @@
 import axios from "axios";
 import Filter from "./components/Filter";
 import BrigadesList from "./components/BrigadesList";
+import { Divider } from "antd";
 import urls from "./data/url";
 import { useState, useEffect } from "react";
-import { Pagination } from "antd";
 import "./App.css";
 
 function App() {
@@ -41,11 +41,19 @@ function App() {
     }
 
     if (isLoading) {
-        return <h1>Data Loading ...</h1>;
+        return (
+            <div className="App">
+                <h1>Data Loading ...</h1>
+            </div>
+        );
     }
 
     if (error) {
-        return <h1>{error}</h1>;
+        return (
+            <div className="App">
+                <h1>{error}</h1>
+            </div>
+        );
     }
 
     return (
@@ -56,6 +64,7 @@ function App() {
                 handleConnectionChange={handleConnectionChange}
                 handleDepartmentChange={handleDepartmentChange}
             />
+            <Divider />
             <BrigadesList
                 brigades={brigades}
                 departments={departments}
@@ -63,7 +72,6 @@ function App() {
                 selectedDepartment={selectedDepartment}
                 selectedConnection={selectedConnection}
             />
-            <Pagination defaultCurrent={1} total={brigades.length} />
         </div>
     );
 }

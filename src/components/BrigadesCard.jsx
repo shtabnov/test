@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "antd";
+import { CheckCircleOutlined, StopOutlined } from "@ant-design/icons";
 import styles from "./BrigadesCard.module.css";
 
 const BrigadesCard = ({ brigade, department, connection }) => {
@@ -17,8 +18,16 @@ const BrigadesCard = ({ brigade, department, connection }) => {
                                 : styles.connection_without
                         }
                     >
-                        <b>Соединение</b>: {connection[0].name}
+                        <b>Соединение: </b> {connection[0].name + " "}
+                        <span>
+                            {connection[0].connectionStateId ? (
+                                <CheckCircleOutlined />
+                            ) : (
+                                <StopOutlined />
+                            )}
+                        </span>
                     </span>
+
                     <span>
                         <b>Кластер</b>: {position.field}
                     </span>
