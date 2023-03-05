@@ -3,6 +3,7 @@ import Filter from "./components/Filter";
 import BrigadesList from "./components/BrigadesList";
 import urls from "./data/url";
 import { useState, useEffect } from "react";
+import { Pagination } from "antd";
 import "./App.css";
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
                 selectedDepartment={selectedDepartment}
                 selectedConnection={selectedConnection}
             />
+            <Pagination defaultCurrent={1} total={brigades.length} />
         </div>
     );
 }
