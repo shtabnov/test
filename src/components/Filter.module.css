@@ -1,9 +1,23 @@
 .filter {
-    display: flex;
-    text-align: left;
+  display: flex;
+  text-align: left;
 }
 
 .selectbox {
+  width: 200px;
+  margin: 20px;
+}
+.selectbox > span {
+  width: 200px;
+  margin-left: 5px;
+}
+
+@media (max-width: 480px) {
+  .filter {
+    flex-direction: column;
+  }
+  .selectbox {
     width: 200px;
-    margin: 20px;
+    margin: 5px;
+  }
 }

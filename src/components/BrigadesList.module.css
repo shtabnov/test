@@ -1,5 +1,10 @@
 .brigades {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+@media (max-width: 667.999px) {
+  .brigades {
+    padding: 0 10px;
+  }
 }
