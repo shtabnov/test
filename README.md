@@ -1,30 +1,15 @@
-# Getting Started with Create React App
+Приложение должно быть создано с помощью create-react-app, с использованием redux, rest API и написано на typescript.
+Внешний вид приложения состоит из фильтра состояния соединения, департаментов и «плиток»(плитки выделены зелёным) бригад.
+Вёрстка должна быть выполнена с использованием библиотеки https://ant.design/.
+Пример приложения: https://v1336-test-task.vercel.app/.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Данные забираются тремя методами:
+https://v1336-api-test.onrender.com/getBrigadesData - получение бригад с данными
+https://v1336-api-test.onrender.com/getDepartments - получение департаментов
+https://v1336-api-test.onrender.com/getConnectionState - получение статусов подключения
 
-## Available Scripts
+Приложение должно быть адаптированно как в десктопной, так и в мобильной версии браузера.
+На время загрузки данных должен отображаться прелоадер.
+Если сервер с данными недоступен, должно выводиться предупреждающее сообщение.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+В плитках бригады вместо пагнации нужно использовать скролл. Количество плиток в окне браузера должно быть максимальным, но информация в плитках не должна теряться и искажаться.
